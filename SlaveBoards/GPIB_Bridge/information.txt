@@ -1,7 +1,9 @@
 /*  GPIB bridge documentation
 
+Files identified with 20181111200508 use a right-angle, through hole Centronics receptical.  e.g. digikey 1024RFA-ND  CONN SCSI .085" FEMALE RA 24POS.
+This board (20181111200508) does not have the "address" button.
 
 
-
+1024RMA-ND CONN SCSI .085" MALE RA 24POS
 
 */
