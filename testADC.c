@@ -8,7 +8,6 @@
 
 int main (int argc, char* argv[]){
 	int i,k;
-	float myTemp,myVolts;
 	unsigned int periods, valueADC;
 
 	initializeBoard();
@@ -23,6 +22,8 @@ int main (int argc, char* argv[]){
 
 	}
 	printf("\nOK\n");
+}
+printf("\nOK\n");
 
 	return 0 ;
 }
