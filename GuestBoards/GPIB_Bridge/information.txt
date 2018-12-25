@@ -1,9 +1,10 @@
 /*  GPIB bridge documentation
 
-Files identified with 20181111200508 use a right-angle, through hole Centronics receptical.  e.g. digikey 1024RFA-ND  CONN SCSI .085" FEMALE RA 24POS.
-This board (20181111200508) does not have the "address" button.
+Two board versions:
+1. Male GPIB uses connector like Digikey 1024RMA-ND mounted on the TOP side of the board. Note where pin 1 is. This version of the board does not have a pushbutton switch for changing the RS485 address.
 
+2. Female GPIB uses connector like Digikey 1024RFA-ND mounted on the BOTTOM side of the board. Again, note where pin 1 is. This version of the board DOES have a push button. 
 
-1024RMA-ND CONN SCSI .085" MALE RA 24POS
+Both boards: the GPIB connector interferes with the the left two mounting holes for the plexiglass mounting plane for the LCD. The two right mounting holes are sufficient to hold the plexiglass.
 
 */
