@@ -3,7 +3,7 @@
 
 char RS485_Init()
 {
-	//see page 133. Required for asynchronous
+	//see page 133 of 16F690 data sheet. Required for asynchronous
 	SPEN = 1;
 	TRISB5 = 1;//RX pin
 	TRISB7 = 1;//TX pin
