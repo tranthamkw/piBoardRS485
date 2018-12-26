@@ -6,9 +6,7 @@
 
 /*
 
-Microcontroller listens to RS485 commands and sets a servo to one of 8 positions. 
-
-
+Microcontroller listens to RS485 commands and sets one of two servos to one of 8 positions. 
 
 Set Servo to one of eight positions:
 Write 
@@ -67,7 +65,6 @@ static void interrupt isr(void)
 {
   if(T0IF) {	            // TIMER0 Interrupt Flag
 	time_count++; // counts the number of times we go through this interupt. This interrupt is called every 0.1 mS
-    
     /* MAX_VALUE=200  */
     if (time_count == MAX_COUNT) { //reset everything and turn on 
 		RA5=1;
