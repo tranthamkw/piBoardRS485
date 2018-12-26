@@ -3,7 +3,9 @@
 
 Digial devices:
 A) servo control
-B) General purpose digital io
+B) General purpose digital IO
 C) stepper motor control
+
+Board is the same for all three devices. Funciton is determined with software.  The OLED display is optional. 
 
 */
