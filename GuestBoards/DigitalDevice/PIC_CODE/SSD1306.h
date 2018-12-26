@@ -24,7 +24,7 @@ void writeCharSSD1306(unsigned char line, unsigned char column, char* c, unsigne
 //void bargraphSSD1306(unsigned char line, unsigned short start, unsigned short end, unsigned short value, unsigned short maxvalue);
 void itoa(unsigned int value, char *result, unsigned int base,char minPos);
 
-/* ASCIII printable characters only from 32 to 126.
+/* ASCII printable characters only from 32 to 126.
 	this is a reduced set to save memory.
 	myFont[0] = ascii character 32
 	myFont[n] = ascii character 32 + n
