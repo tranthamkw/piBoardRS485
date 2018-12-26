@@ -1,0 +1,9 @@
+/*
+
+
+Digial devices:
+A) servo control
+B) General purpose digital io
+C) stepper motor control
+
+*/
