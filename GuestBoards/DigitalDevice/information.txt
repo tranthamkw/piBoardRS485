@@ -1,0 +1,14 @@
+/*
+
+
+Digial devices:
+A) servo control
+B) General purpose digital IO
+C) stepper motor control
+
+Board is the same for all three devices. Funciton is determined with software. 
+
+The  128x32 OLED display is optional. Devices do not require the display to function. Display functions could be removed from the compiled code. The display is useful for displaying routine information, such as the RS485 address. 
+
+
+*/

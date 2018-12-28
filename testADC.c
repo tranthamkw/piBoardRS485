@@ -6,7 +6,6 @@
 #include "piBoard.h"
 #include "RS485Devices.h"
 
-
 int main (int argc, char* argv[]){
 	int i,k;
 	unsigned int periods, valueADC;
@@ -15,12 +14,14 @@ int main (int argc, char* argv[]){
 /*
 */
 
-for (i=0;i<8;i++){
+	for (i=0;i<8;i++){
 
 	getADC(i,&valueADC);
 	printf("ADC%d: %d\t",i,valueADC);
 	delay(100);
 
+	}
+	printf("\nOK\n");
 }
 printf("\nOK\n");
 

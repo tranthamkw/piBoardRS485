@@ -1,0 +1,10 @@
+/*  GPIB bridge documentation
+
+Two board versions:
+1. Male GPIB uses connector like Digikey 1024RMA-ND mounted on the TOP side of the board. Note where pin 1 is. This version of the board does not have a pushbutton switch for changing the RS485 address.
+
+2. Female GPIB uses connector like Digikey 1024RFA-ND mounted on the BOTTOM side of the board. Again, note where pin 1 is. This version of the board DOES have a push button. 
+
+Both boards: the GPIB connector interferes with the the left two mounting holes for the plexiglass mounting plane for the LCD. The two right mounting holes are sufficient to hold the plexiglass.
+
+*/
