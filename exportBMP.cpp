@@ -47,8 +47,9 @@ if (nNumberofArgs==3){
 	if (height==128 & width==128 & bpp==24){
 		strcpy(fileName,argv[2]);
 		fp=fopen(fileName,"w");
-		fprintf(fp,"/* image is a 128x128 pixel array encoded  with 4 bits per color.\n");
-fprintf(fp,"data:  image[i]=[RG], image[i+1]=[BR], image [i+2]=[GB] corresponding to pixel[m] and pixel[m+1]. There are 192 bytes per line and 128 lines.\n*/\n");
+		fprintf(fp,"/*\nImage is a 128x128 pixel array encoded  with 4 bits per color.\n");
+fprintf(fp,"data:  image[i]=[RG], image[i+1]=[BR], image [i+2]=[GB] corresponding to pixel[m] and pixel[m+1]. There are 192 bytes per line and 128 lines.\n");
+fprintf(fp,"This file must be copied to same directory as other included files for programming the PIC.\n*/\n");
 		fprintf(fp,"const char image[]={\n");
 	for (i=0;i<height;i++){
 		for(j=0;j<width;j++){

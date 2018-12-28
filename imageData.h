@@ -1,5 +1,7 @@
-/* image is a 128x128 pixel array encoded  with 4 bits per color.
+/*
+Image is a 128x128 pixel array encoded  with 4 bits per color.
 data:  image[i]=[RG], image[i+1]=[BR], image [i+2]=[GB] corresponding to pixel[m] and pixel[m+1]. There are 192 bytes per line and 128 lines.
+This file must be copied to same directory as other included files for programming the PIC.
 */
 const char image[]={
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
