@@ -68,7 +68,10 @@ fprintf(fp,"This file must be copied to same directory as other included files f
 
 		if (i==127) {
 			if (j==127){
-				fprintf(fp,"};\n");}
+				fprintf(fp,"};\n");
+			}else{
+			fprintf(fp,",");
+			}
 		}else{
 			if (j==127){
 			fprintf(fp,",\n");
