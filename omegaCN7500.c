@@ -19,7 +19,7 @@ int getPVCN7500(unsigned short chan, float* temperature){
 	if(status==0){
 		*temperature =(float)returndata/10.0;
 	}else{
-		printf("error reading CN7500 code %d\n",status);
+		printf("Channel %d error reading CN7500 code %d\n",chan, status);
 	}
 	return status;
 }
@@ -33,7 +33,7 @@ int getSVCN7500(unsigned short chan, float* temperature){
 	if(status==0){
 		*temperature  =(float)returndata/10.0;
 	}else{
-		printf("error reading CN7500 code %d\n",status);
+		printf("Channel %d error reading CN7500 code %d\n",chan, status);
 	}
 	return status;
 }

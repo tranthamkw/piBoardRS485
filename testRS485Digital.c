@@ -3,7 +3,7 @@
 
 #include <stdio.h>
 #include <string.h>
-#include "kenBoard.h"
+#include "piBoard.h"
 #include "RS485Devices.h"
 
 
@@ -28,9 +28,9 @@ if (argc==3){
 	printf("Setting: %02X\n",value);
 	status=setRS485DigitalOut(chan,value);
 	printf("Status %d\n",status);
-	status=getRS485DigitalOut(chan,&value);
-	printf("Confirm: %02X\n",value);
-	printf("Status %d\n",status);
+//	status=getRS485DigitalOut(chan,&value);
+//	printf("Confirm: %02X\n",value);
+//	printf("Status %d\n",status);
 
 } else printf("usage: ./testRS485Digtal <valueHEX> <AddressHEX>\n");
 

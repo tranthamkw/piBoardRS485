@@ -3,6 +3,18 @@
    useful information
    to follow
 
+Omega Setup
+SALA = off
+CoSH = off
+C-SL = rtu
+C-no = 8  <--change this to a unique RS485 bus address
+bPS = 9600
+LEn=8
+Prty = none
+StoP=1
+
+
+
 */
 
 #include <stdio.h>
