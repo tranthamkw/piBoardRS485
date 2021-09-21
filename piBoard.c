@@ -241,13 +241,13 @@ void write_rs485BYTE(unsigned char* cmd, unsigned int numchar, unsigned char* ps
 	unsigned int loop;
 
 	digitalWrite(RS485CONTROL,WRITE);// sets the control signal WRITE to the RS 485 buss
-	delayMicrosecondsHard(10);// minor wait to allow signals to settle
+	delayMicrosecondsHard(20);// minor wait to allow signals to settle
 
 	for (j=0;j<numchar;j++){
 		serialPutchar(fd,cmd[j]);
 	}
 	// cannot read in from UART until done transmitting, so wait . . . 
-	delayMicrosecondsHard(calcDelay(numchar+2));
+	delayMicrosecondsHard(calcDelay(numchar+3));
 
 	digitalWrite(RS485CONTROL,LISTEN);// now set control to READ (i.e. LISTEN)
 	loop=0;
@@ -260,7 +260,7 @@ void write_rs485BYTE(unsigned char* cmd, unsigned int numchar, unsigned char* ps
 			pszEcho[i]=serialGetchar(fd);
 			i++;
 	    		}
-		delay(50);
+			delay(70);
 		}
 		if (i>0) loop=100;
 		loop++; j++;
