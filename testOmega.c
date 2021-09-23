@@ -9,7 +9,6 @@
 #include "omegaCN740.h"
 
 // THESE ARE THE RS485 ADDRESSES OF EACH RS485 INSTRUMENT/BRIDGE/SLAVE DEVICE
-#define OMEGA1 12 // omegaCN740
 #define OMEGA2 8 //omegaCN7800
 
 
@@ -29,10 +28,6 @@ int main (int argc, char* argv[]){
 	i=getPVCN7500(OMEGA2,&myTemp);
 	if (!i) printf("Omega 2 temperature = %.1f°\n",myTemp); else printf("Status %d\n",i);
 delay(100);
-	i=getPVCN740(OMEGA1,&myTemp);
-	if (!i) printf("Omega 1 temperature = %.1f°\n",myTemp); else printf("Status %d\n",i);
-
-	delay(100);
 
 
 	return 0 ;

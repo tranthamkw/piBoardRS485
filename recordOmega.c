@@ -42,16 +42,12 @@ int main (int argc, char* argv[]){
 
 
 	FILE *fp;
-
 	initializeBoard();
 	time(&rawtime);
 	timeinfo=localtime(&rawtime);
 	struct stat st = {0};
-
 	strftime(filePath,BUFSIZE,"/home/pi/data/%F",timeinfo);
-
 	if (stat(filePath, &st) == -1){
-
 		mkdir(filePath, S_IRWXU | S_IRWXG | S_IRWXO);
 	printf("%s",filePath);
 	}
@@ -59,6 +55,7 @@ int main (int argc, char* argv[]){
 	sprintf(buffer,"%s.csv",fileName);
 	printf("\n%s\n",buffer);
 	sprintf(fileName,"%s/%s",filePath,buffer);
+
 
 	fp = fopen(fileName,"w");
 	if (!fp){
