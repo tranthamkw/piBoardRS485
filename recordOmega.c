@@ -30,7 +30,7 @@ int main (int argc, char* argv[]){
 	double seconds;
 	struct tm * timeinfo;
 	char filePath[BUFSIZE], fileName[BUFSIZE], buffer[BUFSIZE];
-
+	char appender[BUFSIZE];
 
 	if (argc==2) {
 		runtime = atoi(argv[1]);
@@ -40,6 +40,7 @@ int main (int argc, char* argv[]){
 	}
 
 
+	appender = "tester";
 
 	FILE *fp;
 	initializeBoard();
@@ -51,7 +52,8 @@ int main (int argc, char* argv[]){
 		mkdir(filePath, S_IRWXU | S_IRWXG | S_IRWXO);
 	printf("%s",filePath);
 	}
-	strftime(fileName,BUFSIZE,"record%F_%H%M%S",timeinfo);
+	sprintf(buffer,"%s_%F_%H%M%S",appender);
+	strftime(fileName,BUFSIZE,buffer,timeinfo);
 	sprintf(buffer,"%s.csv",fileName);
 	printf("\n%s\n",buffer);
 	sprintf(fileName,"%s/%s",filePath,buffer);
