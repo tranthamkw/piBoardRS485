@@ -31,7 +31,7 @@ int main (int argc, char* argv[]){
 
 
 	initializeBoard();
-	printf("initializing SRS530 . . .\n");
+	printf("initializing SRS530   . . .\n");
 	initSRS530(SRS530);
 	printf("initializing SRS830 . . .\n");
 	initSRS830(SRS830);
