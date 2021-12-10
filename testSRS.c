@@ -10,7 +10,7 @@
 // THESE ARE THE RS485 ADDRESSES OF EACH RS485 INSTRUMENT/BRIDGE/SLAVE DEVICE
 #define SRS830 0xCA
 #define SRS530 0xC6
-
+#define SRS345 0xCB
 
 
 int main (int argc, char* argv[]){

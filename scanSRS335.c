@@ -26,6 +26,7 @@ int main (int argc, char* argv[]){
 	int i,k,runtime,numloops,pausetime;
 	float myR8,myPhi8,myf8,myR5,myPhi5,myf5,myT;
 	float myf335,myA335;
+	float beginf,endf,deltaf,setf;
 	unsigned int periods;
 
 	time_t rawtime, now;
@@ -36,21 +37,36 @@ int main (int argc, char* argv[]){
 	char comments[512];
 
 
-	if (argc==4){
-		numloops = atoi(argv[1]);
-		pausetime = atoi(argv[2]);
-		strcpy(comments,argv[3]);
+	if (argc==6){
+		beginf = atof(argv[1]);
+		endf = atof(argv[2]);
+		deltaf = atof(argv[3]);
+		pausetime = atoi(argv[4]);
+		strcpy(comments,argv[5]);
+
 	}else{
-		printf("Usage '~$sudo ./ recordSRS <int:numloops> <int:mS to pause between aqc> <comments in quotes>'\n");
+		printf("Usage '~$sudo ./ scanSRS <f begin> <f end> <delta f> <int:mS to pause between aqc> <comments in quotes>'\n");
+		return 1;
+	}
+	printf("Begin frequency %f\n\n",beginf);
+	printf("End frequency %f\n\n",endf);
+	printf("Frequency step size %f\n\n",deltaf);
+
+	numloops = (int)((endf - beginf)/deltaf)+2;
+
+	if (numloops<0){
+		printf("Error: end frequency greater than begin frequency\n");
 		return 1;
 	}
 
+	printf("Number of loops = %d\n\n",numloops);
+	printf("Estimated time to completion = %d seconds = %.2f minutes\n\n",(numloops*(pausetime+2100))/1000,((float)(numloops*(pausetime+2100))/60000.0));
 
 	initializeBoard();
 	time(&rawtime);
 	timeinfo = localtime(&rawtime);
 
-	strcpy(appender,"recordSRS");
+	strcpy(appender,"scanSRS");
 	getFileName(appender,fileName);
 
 	FILE *fp;
@@ -71,11 +87,18 @@ int main (int argc, char* argv[]){
 	printf("initializing SRS830 . . .\n");
 	initSRS830(SRS830);
 
+	printf("seconds\tmyR8\t\tmyPhi8\tmyf8\tmyR5\t\tmyPhi5\tmyf5\tmyf335\tmyA335\tmyT\n");
+
+
 	k=0;
 
 	do {
 		time(&now);
 		seconds = difftime(now,rawtime);
+		setf = (beginf + (float)k * deltaf);
+
+		setSRS335Freq(setf,SRS335);
+		delay(pausetime);
 
 		i = getPVCN7500(OMEGA,&myT);
 		getSRS830Data(&myR8,&myPhi8,&myf8,SRS830);
@@ -89,7 +112,6 @@ int main (int argc, char* argv[]){
 		printf("%.f\t%e\t%.3f\t%.3f\t%.3e\t%.3f\t%.3f\t%.3f\t%.3f\t%.1f\n", seconds,myR8,myPhi8,myf8,myR5,myPhi5,myf5,myf335,myA335,myT);
 
 		fprintf(fp,"%.f,%e,%.3f,%.3f,%.3e,%.3f,%.3f,%.3f,%.3f,%.1f\n", seconds,myR8,myPhi8,myf8,myR5,myPhi5,myf5,myf335,myA335,myT);
-	delay(pausetime);
 
 
 	k++;
