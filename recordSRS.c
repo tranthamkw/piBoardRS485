@@ -3,6 +3,8 @@
 
 insert to force github
 
+now edit on pi 4
+
  * to new data collection files that are created. 
 */
 
