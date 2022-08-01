@@ -100,7 +100,8 @@ int main (int argc, char* argv[]){
 		setSRS335Freq(setf,SRS335);
 		delay(pausetime);
 
-		i = getPVCN7500(OMEGA,&myT);
+//		i = getPVCN7500(OMEGA,&myT);
+myT=99.9;
 		getSRS830Data(&myR8,&myPhi8,&myf8,SRS830);
 		getSRS530R(&myR5,SRS530);
 		getSRS530Phi(&myPhi5,SRS530);

@@ -107,7 +107,9 @@ return status;
 int moveRS485StepperMotor(unsigned short chan, unsigned short steps, unsigned char dir){
 	int status;
 	unsigned short command;
-	command = steps;
+	command = steps+(dir<<15);
+	printf("%x\n",command);
+
 	status=write_Modbus_RTU(chan,BASEREGSTEPMTR, command);
 	return status;
 }
@@ -156,7 +158,7 @@ int getRS485StepperMotorStepsRev(unsigned short chan, unsigned int* stepsperrev)
 }
 
 
-int findRS485HomeStepperMotor(unsigned short chan, unsigned char state, unsigned char direction){
+int findHomeRS485StepperMotor(unsigned short chan, unsigned char state, unsigned char direction){
 	// state is the state the pic is looking for, direction is the direction to move the motor
 	// state = 0 or 1
 	// direction = 0 or 1
