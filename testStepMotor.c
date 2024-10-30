@@ -1,5 +1,8 @@
 /*
  * This is a template file to show all of the necessary components to add
+
+test stepmotor
+
  * to new data collection files that are created. 
 */
 
