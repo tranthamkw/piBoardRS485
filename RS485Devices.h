@@ -3,6 +3,7 @@
 General header File to encapsulate all slave device functions
  */
 
+#include <wiringSerial.h>
 
 #define BASEREGANLG 0x0D0D
 #define BASEREGSERVO 0x0A0A
