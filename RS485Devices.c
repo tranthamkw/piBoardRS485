@@ -108,7 +108,7 @@ int moveRS485StepperMotor(unsigned short chan, unsigned short steps, unsigned ch
 	int status;
 	unsigned short command;
 	command = steps+(dir<<15);
-	printf("%x\n",command);
+//	printf("%x\n",command);
 
 	status=write_Modbus_RTU(chan,BASEREGSTEPMTR, command);
 	return status;
